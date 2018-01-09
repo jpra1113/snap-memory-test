@@ -1,0 +1,25 @@
+package: github.com/jpra1113/snap-plugin-collector-main
+import:
+- package: github.com/jpra1113/snap-plugin-collector-cpu
+  subpackages:
+  - cpu
+- package: github.com/jpra1113/snap-plugin-collector-disk
+  subpackages:
+  - disk
+- package: github.com/jpra1113/snap-plugin-collector-docker
+  subpackages:
+  - collector
+- package: github.com/jpra1113/snap-plugin-collector-prometheus
+  subpackages:
+  - prometheus
+- package: github.com/jpra1113/snap-plugin-collector-psutil
+  subpackages:
+  - psutil
+- package: github.com/jpra1113/snap-plugin-collector-use
+  subpackages:
+  - use
+- package: github.com/jpra1113/snap-plugin-lib-go
+  subpackages:
+  - v1/plugin
+- package: google.golang.org/grpc
+  version: ^v1.4

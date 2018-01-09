@@ -1,0 +1,176 @@
+hash: 79b9f123f755660fbb2cca5dc3b509b25df2a99e71aa93ede78593c31957bae5
+updated: 2018-01-08T16:18:13.49036868+08:00
+imports:
+- name: github.com/docker/go-units
+  version: 0dadbb0345b35ec7ef35e228dabb8de89a65bf52
+- name: github.com/fsouza/go-dockerclient
+  version: 412c004d923b7b89701e7a1632de83f843657a03
+  subpackages:
+  - external/github.com/Sirupsen/logrus
+  - external/github.com/docker/docker/opts
+  - external/github.com/docker/docker/pkg/archive
+  - external/github.com/docker/docker/pkg/fileutils
+  - external/github.com/docker/docker/pkg/homedir
+  - external/github.com/docker/docker/pkg/ioutils
+  - external/github.com/docker/docker/pkg/parsers
+  - external/github.com/docker/docker/pkg/pools
+  - external/github.com/docker/docker/pkg/promise
+  - external/github.com/docker/docker/pkg/stdcopy
+  - external/github.com/docker/docker/pkg/system
+  - external/github.com/docker/docker/pkg/ulimit
+  - external/github.com/docker/docker/pkg/units
+  - external/github.com/docker/docker/volume
+  - external/github.com/opencontainers/runc/libcontainer/user
+- name: github.com/go-ole/go-ole
+  version: a41e3c4b706f6ae8dfbff342b06e40fa4d2d0506
+  subpackages:
+  - oleutil
+- name: github.com/golang/glog
+  version: 44145f04b68cf362d9c4df2182967c2275eaefed
+- name: github.com/golang/protobuf
+  version: 748d386b5c1ea99658fd69fe9f03991ce86a90c1
+  subpackages:
+  - proto
+  - ptypes
+  - ptypes/any
+  - ptypes/duration
+  - ptypes/timestamp
+- name: github.com/intelsdi-x/snap-plugin-utilities
+  version: 3c37e3965f3fc2f24714779d3bae7ba7032b87a9
+  subpackages:
+  - ns
+  - str
+- name: github.com/jpra1113/snap-plugin-collector-cpu
+  version: 739326ae651e80657ab0efaca608637f0776f807
+  subpackages:
+  - cpu
+- name: github.com/jpra1113/snap-plugin-collector-disk
+  version: b6e91c289e07197063d4581cdcc8542825686a6f
+  subpackages:
+  - disk
+- name: github.com/jpra1113/snap-plugin-collector-docker
+  version: e964be73141fa371863a4d43aaeab7a38ad0ec7b
+  subpackages:
+  - collector
+  - config
+  - container
+  - container/cgroupfs
+  - container/fs
+  - container/network
+- name: github.com/jpra1113/snap-plugin-collector-prometheus
+  version: 767e052609c306d57cc1b7e913f2277a9b405d74
+  subpackages:
+  - prometheus
+- name: github.com/jpra1113/snap-plugin-collector-psutil
+  version: f78f3592eb02550429d40dbf0f6291d9406d1b22
+  subpackages:
+  - psutil
+- name: github.com/jpra1113/snap-plugin-collector-use
+  version: e02f948506a6e8adf324ae490b25a8be4f7ca423
+  subpackages:
+  - use
+- name: github.com/jpra1113/snap-plugin-lib-go
+  version: e9617f6ca06b1cbb480fd7a957eb5372a89ea769
+  subpackages:
+  - v1/plugin
+  - v1/plugin/rpc
+- name: github.com/julienschmidt/httprouter
+  version: 8c199fb6259ffc1af525cc3ad52ee60ba8359669
+- name: github.com/matttproud/golang_protobuf_extensions
+  version: d0c3fe89de86839aecf2e0579c40ba3bb336a453
+  subpackages:
+  - pbutil
+- name: github.com/mistifyio/go-zfs
+  version: cdc0f941c4d0e0e94d85348285568d921891e138
+- name: github.com/moby/moby
+  version: 092cba3727bb9b4a2f0e922cd6c0f93ea270e363
+  subpackages:
+  - pkg/mount
+- name: github.com/oleiade/reflections
+  version: 632977f98cd34d217c4b57d0840ec188b3d3dcaf
+- name: github.com/pkg/errors
+  version: 645ef00459ed84a119197bfb8d8205042c6df63d
+- name: github.com/prometheus/client_model
+  version: fa8ad6fec33561be4280a8f0514318c79d7f6cb6
+  subpackages:
+  - go
+- name: github.com/prometheus/common
+  version: e8eabff8812b05acf522b45fdcd725a785188e37
+  subpackages:
+  - expfmt
+  - internal/bitbucket.org/ww/goautoneg
+  - model
+- name: github.com/shirou/gopsutil
+  version: 7ec06ec280df1dd1f08befc535049d49d63ae18a
+  subpackages:
+  - cpu
+  - disk
+  - host
+  - internal/common
+  - load
+  - mem
+  - net
+  - process
+- name: github.com/shirou/w32
+  version: bb4de0191aa41b5507caa14b0650cdbddcd9280b
+- name: github.com/Sirupsen/logrus
+  version: d682213848ed68c0a260ca37d6dd5ace8423f5ba
+- name: github.com/StackExchange/wmi
+  version: ea383cf3ba6ec950874b8486cd72356d007c768f
+- name: github.com/urfave/cli
+  version: cfb38830724cc34fedffe9a2a29fb54fa9169cd1
+- name: golang.org/x/crypto
+  version: aedad9a179ec1ea11b7064c57cbc6dc30d7724ec
+  subpackages:
+  - ssh/terminal
+- name: golang.org/x/net
+  version: 054b33e6527139ad5b1ec2f6232c3b175bd9a30c
+  subpackages:
+  - context
+  - http2
+  - http2/hpack
+  - idna
+  - internal/timeseries
+  - lex/httplex
+  - trace
+- name: golang.org/x/sys
+  version: c8bc69bc2db9c57ccf979550bc69655df5039a8a
+  subpackages:
+  - unix
+  - windows
+- name: golang.org/x/text
+  version: 3bd178b88a8180be2df394a1fbb81313916f0e7b
+  subpackages:
+  - secure/bidirule
+  - transform
+  - unicode/bidi
+  - unicode/norm
+- name: google.golang.org/genproto
+  version: b0a3dcfcd1a9bd48e63634bd8802960804cf8315
+  subpackages:
+  - googleapis/rpc/status
+- name: google.golang.org/grpc
+  version: f3955b8e9e244dd4dd4bc4f7b7a23a8445400a76
+  subpackages:
+  - balancer
+  - balancer/base
+  - balancer/roundrobin
+  - codes
+  - connectivity
+  - credentials
+  - encoding
+  - grpclb/grpc_lb_v1/messages
+  - grpclog
+  - internal
+  - keepalive
+  - metadata
+  - naming
+  - peer
+  - resolver
+  - resolver/dns
+  - resolver/passthrough
+  - stats
+  - status
+  - tap
+  - transport
+testImports: []
