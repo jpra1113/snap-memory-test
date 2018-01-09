@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/gobwas/glob"
 	"github.com/jpra1113/snap-plugin-collector-docker/collector"
 	"github.com/jpra1113/snap-plugin-lib-go/v1/plugin"
 	"github.com/jpra1113/snap-plugin-publisher-influxdb/influxdb"
@@ -52,15 +53,27 @@ func main() {
 		"retention":     "autogen",
 		"skip-verify":   false,
 		"isMultiFields": false,
-		"debug":         false,
-		"log-level":     "debug",
-		"precision":     "s",
 	}
 
 	docker := collector.New()
 	dockerCfg := plugin.Config{
 		"endpoint": "unix:///var/run/docker.sock",
 		"procfs":   "/proc",
+	}
+
+	dockerCollectMetrics := []string{
+		"/intel/docker/*/stats/cgroups/*",
+		"/intel/docker/*/stats/connection/*",
+		"/intel/docker/*/stats/network/*",
+	}
+
+	dockerCollectMetricsPatterns := []glob.Glob{}
+	for _, collectMetric := range dockerCollectMetrics {
+		pattern, _ := glob.Compile(collectMetric)
+		if err != nil {
+			fmt.Printf("Unable to compile pattern %s: %s", collectMetric, err.Error())
+		}
+		dockerCollectMetricsPatterns = append(dockerCollectMetricsPatterns, pattern)
 	}
 
 	for {
@@ -72,7 +85,11 @@ func main() {
 		newMetricTypes := []plugin.Metric{}
 		for _, mts := range metricTypes {
 			mts.Config = dockerCfg
-			newMetricTypes = append(newMetricTypes, mts)
+			for _, pattern := range dockerCollectMetricsPatterns {
+				if pattern.Match(mts.Namespace.String()) {
+					newMetricTypes = append(newMetricTypes, mts)
+				}
+			}
 		}
 
 		collectMetrics, err := docker.CollectMetrics(newMetricTypes)
@@ -85,11 +102,6 @@ func main() {
 			fmt.Println("Unable to publish to influxdb: " + err.Error())
 		}
 		fmt.Printf("Publish %d collect metrics to influxdb", len(collectMetrics))
-
-		metricTypes = nil
-		collectMetrics = nil
-		newMetricTypes = nil
-		err = nil
 
 		time.Sleep(time.Second * 5)
 	}
