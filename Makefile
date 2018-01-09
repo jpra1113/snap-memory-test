@@ -5,6 +5,6 @@ build-release:
 build-local:
 	go build .
 docker-build: 
-	sudo docker build --no-cache -t jpra1113/snap:memory-test .
+	sudo docker build -t jpra1113/snap:memory-test .
 docker-push: build-release docker-build
 	sudo docker push jpra1113/snap:memory-test

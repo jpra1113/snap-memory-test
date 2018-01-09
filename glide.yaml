@@ -1,25 +1,40 @@
-package: github.com/jpra1113/snap-plugin-collector-main
+package: github.com/jpra1113/snap-memory-test
 import:
-- package: github.com/jpra1113/snap-plugin-collector-cpu
-  subpackages:
-  - cpu
-- package: github.com/jpra1113/snap-plugin-collector-disk
-  subpackages:
-  - disk
 - package: github.com/jpra1113/snap-plugin-collector-docker
   subpackages:
   - collector
-- package: github.com/jpra1113/snap-plugin-collector-prometheus
-  subpackages:
-  - prometheus
-- package: github.com/jpra1113/snap-plugin-collector-psutil
-  subpackages:
-  - psutil
-- package: github.com/jpra1113/snap-plugin-collector-use
-  subpackages:
-  - use
 - package: github.com/jpra1113/snap-plugin-lib-go
   subpackages:
   - v1/plugin
+- package: github.com/jpra1113/snap-plugin-publisher-influxdb
+  subpackages:
+  - influxdb
+- package: golang.org/x/net
+  version: 054b33e6527139ad5b1ec2f6232c3b175bd9a30c
+  subpackages:
+  - context
+  - http2
+  - http2/hpack
+  - idna
+  - internal/timeseries
+  - lex/httplex
+  - trace  
+- package: golang.org/x/text
+  version: 1cbadb444a806fd9430d14ad08967ed91da4fa0a
+  subpackages:
+  - secure/bidirule
+  - transform
+  - unicode/bidi
+  - unicode/norm
 - package: google.golang.org/grpc
   version: ^v1.4
+- package: k8s.io/apimachinery
+  subpackages:
+  - pkg/apis/meta/v1
+- package: k8s.io/client-go
+  subpackages:
+  - kubernetes
+  - pkg/api/v1
+  - rest
+- package: github.com/google/gofuzz
+  version: 44d81051d367757e1c7c6a5a86423ece9afcf63c
